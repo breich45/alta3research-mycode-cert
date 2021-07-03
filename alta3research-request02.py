@@ -24,13 +24,26 @@ def main():
         if answer in ["1", "2", "3", "4"]:
             if answer == "1":
                 resp = requests.get(f"{apiurl}/ontap")
-                print(resp.json())
+                for i in resp.json():
+                    print(f"Tap Position: {i['Tap_position']}")
+                    print(f"Name: {i['Name']}")
+                    print(f"Description: {i['Description']}")
+                    print()
+                input("Press Enter to continue...")
             elif answer == "2":
                 resp = requests.get(f"{apiurl}/comingsoon")
-                print(resp.json())
+                for i in resp.json():
+                    print(f"Name: {i['Name']}")
+                    print(f"Description: {i['Description']}")
+                    print()
+                input("Press Enter to continue...")
             elif answer == "3":
                 resp = requests.get(f"{apiurl}/suggestionbox")
-                print(resp.json())
+                for i in resp.json():
+                    print(f"Name: {i['Name']}")
+                    print(f"suggestion: {i['suggestion']}")
+                    print()
+                input("Press Enter to continue...")
             elif answer == "4":
                 myname = input("What's your name?: ")
                 mysuggestion = input("What's your suggestion?: ")

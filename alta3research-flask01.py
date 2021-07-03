@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+''' This will provide data as to what is currently on tap on my 5-tap Keezer
+    as well as what is up next when a keg gets tapped
+    '''
 
 from flask import Flask
 from flask import json
